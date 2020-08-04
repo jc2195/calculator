@@ -268,7 +268,10 @@
 
 
         function numbers(button) {
-            if (displayContent == 0 || currentOperation == "equals") {
+            if (currentOperation == "equals") {
+                clear();
+            }
+            if (displayContent == 0) {
                 display.textContent = button.textContent;
                 displayContent = 0;
             }
@@ -307,6 +310,8 @@
         function clear() {
             display.textContent = "";
             displayContent = 0;
+            oldDisplayContent = 0;
+            currentOperation = "none";
         }
 
         function operator(button) {
